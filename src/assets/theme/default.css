@@ -1,0 +1,9 @@
+:root {
+    --font-size: 16px;
+    
+    /** -- COLORS -- **/
+    --light-gray: #ebebeb;
+    --gray: #cbcbcb;
+    --red: #ff4444;
+    --blue: #2b3990;
+}

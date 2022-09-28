@@ -1,0 +1,13 @@
+#root, body {
+    height: 100vh;
+}
+
+.required:after {
+    content: '*';
+    font-family: monospace;
+    font-size: 1em;
+    color: var(--red);
+    font-weight: 600;
+    padding-left: 2px;
+    position: absolute;
+}

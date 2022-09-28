@@ -1,0 +1,42 @@
+<div class="card p-4">
+    <div class="pb-4">
+        <img class="userPhoto" src="{{user.photoUrl}}">
+        <div>{{user.firstName}} {{user.lastName}}</div>
+    </div>
+    <form [formGroup]="userInfoForm" (keydown.enter)="onSubmit()" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="residentialAddress" class="form-label required">Residential Address</label>
+            <input type="text" id="residentialAddress" formControlName="residentialAddress" class="form-control"
+                placeholder="Enter here">
+            <div *ngIf="
+            userInfoForm!=undefined && 
+            userInfoForm.get('residentialAddress')?.touched && 
+            userInfoForm.get('residentialAddress')?.errors?.['required']" class="text-danger">
+                This field is required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="officeAddress" class="form-label required">Office Location</label>
+            <select id="officeAddress" formControlName="officeAddress" class="form-select">
+                <option disabled selected value="">Select</option>
+                <option *ngFor="let location of officeLocations" value="{{location}}">{{location}}</option>
+            </select>
+            <div *ngIf="
+            userInfoForm!=undefined && 
+            userInfoForm.get('officeAddress')?.touched && 
+            userInfoForm.get('officeAddress')?.errors?.['required']" class="text-danger">
+                This field is required.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="userInfoForm.invalid || loading || !userInfoForm.touched"
+            class="btn btn-primary">
+            <span>
+                Save Changes
+            </span>
+        </button>
+    </form>
+    <div *ngIf="message" class="alert alert-success mt-4">
+        {{message}}
+    </div>
+</div>

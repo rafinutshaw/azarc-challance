@@ -1,0 +1,21 @@
+<div class="card p-4">
+    <h3>All employees</h3>
+    <input type="text" [(ngModel)]="searchText" placeholder="Serach any fields" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees | searchFilter:searchText">
+                <th scope="row">{{employee.userId}}</th>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
