@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { UserModel } from '../../auth/models/user.model';
+import { BASE_URL } from '../http/http.utils';
 import { HttpService } from '../http/services/http.service';
 
 @Injectable({
@@ -21,13 +22,13 @@ export class UserService {
   }
 
   public getUserInfo(userId: string): Observable<any> {
-    return this.httpService.Get('http://localhost:3000/profile').pipe(map((x) => {
+    return this.httpService.Get(BASE_URL + '/profile').pipe(map((x) => {
       return x;
     }))
   }
 
   public updateUserInfo(userInfo: UserModel): Observable<any> {
-    return this.httpService.Put('http://localhost:3000/profile', userInfo).pipe(map((x) => {
+    return this.httpService.Put(BASE_URL + '/profile', userInfo).pipe(map((x) => {
       return x;
     }))
   }
