@@ -18,13 +18,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._socialAuthService.authState.subscribe(user => {
-      console.log(user)
+
       if (user) {
         const userInfo = new UserModel({ firstName: user.firstName, lastName: user.lastName, photoUrl: user.photoUrl })
-        this._userService.setUserMeta(userInfo)
-        AuthHelper.setToken(user)
-        AuthHelper.setUserInfo(userInfo)
-        this.router.navigateByUrl('/');
+        this._userService.updateUserInfo(userInfo).subscribe(user => {
+          AuthHelper.setToken(user)
+          this._userService.setUserMeta(userInfo)
+          AuthHelper.setUserInfo(userInfo)
+          this.router.navigateByUrl('/');
+        })
+
       }
     });
   }

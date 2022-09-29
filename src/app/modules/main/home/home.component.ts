@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._route.data.subscribe(data => {
       this.employees = data['employees'] as UserModel[]
-      console.log(this.employees)
     })
   }
 

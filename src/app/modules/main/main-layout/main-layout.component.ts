@@ -25,7 +25,6 @@ export class MainLayoutComponent implements OnInit {
   }
 
   public logout(): void {
-    console.log('erwe');
     this.router.navigateByUrl('/login');
 
     this._socialAuthService.signOut();

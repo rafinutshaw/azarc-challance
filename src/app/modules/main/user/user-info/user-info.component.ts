@@ -41,10 +41,8 @@ export class UserInfoComponent implements OnInit {
     this.loading = true
     this._userService.updateUserInfo(this.user).subscribe(
       {
-        next: (v) => console.log(v),
         error: (e) => { this.message = 'Something went wrong!'; this.loading = false },
         complete: () => { this.message = 'Updated successfully!'; this.loading = false },
-
       }
     )
 

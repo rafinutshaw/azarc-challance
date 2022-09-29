@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees | searchFilter:searchText">
-                <th scope="row">{{employee.userId}}</th>
+                <th scope="row">{{employee.id}}</th>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
             </tr>
