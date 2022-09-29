@@ -10,8 +10,10 @@ const authRoutes: Routes = [
     path: '',
     component: AuthLayoutComponent,
     children: [
-      { path: '',
-      component: LoginComponent,}
+      {
+        path: '',
+        component: LoginComponent,
+      }
     ]
     // canActivate: [StepGuard],
   }
@@ -20,7 +22,7 @@ const authRoutes: Routes = [
 @NgModule({
   declarations: [
     LoginComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,7 @@ const authRoutes: Routes = [
     RouterModule.forChild(authRoutes)
   ],
   providers: [
-    
+
   ],
 })
 export class AuthModule { }

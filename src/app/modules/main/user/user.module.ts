@@ -16,11 +16,10 @@ const userRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    UserInfoComponent
+    UserInfoComponent,
   ],
   imports: [
     CommonModule,
-    // FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(userRoutes),
   ]

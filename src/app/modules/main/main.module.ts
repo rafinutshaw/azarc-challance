@@ -28,7 +28,7 @@ const mainRoutes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
   ],
   imports: [
     CommonModule,

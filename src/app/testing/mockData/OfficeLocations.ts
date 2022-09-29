@@ -1,0 +1,1 @@
+export const OfficeLocations = ['Los Angles', 'London', 'Cape Town']

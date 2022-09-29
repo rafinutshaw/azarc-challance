@@ -3,6 +3,7 @@
         <img class="userPhoto" src="{{user.photoUrl}}">
         <div>{{user.firstName}} {{user.lastName}}</div>
     </div>
+
     <form [formGroup]="userInfoForm" (keydown.enter)="onSubmit()" (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label for="residentialAddress" class="form-label required">Residential Address</label>
@@ -31,9 +32,7 @@
 
         <button type="submit" [disabled]="userInfoForm.invalid || loading || !userInfoForm.touched"
             class="btn btn-primary">
-            <span>
-                Save Changes
-            </span>
+            Save Changes
         </button>
     </form>
     <div *ngIf="message" class="alert alert-success mt-4">
